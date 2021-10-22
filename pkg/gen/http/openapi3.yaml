@@ -1,0 +1,114 @@
+openapi: 3.0.3
+info:
+  title: example Service
+  version: "1.0"
+servers:
+- url: http://localhost:9000/
+paths:
+  /family:
+    get:
+      tags:
+      - exmp
+      summary: get-fam exmp
+      operationId: exmp#get-fam
+      responses:
+        "200":
+          description: OK response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fam'
+              example:
+                father:
+                  age: 5013341427918345482
+                  name: Perspiciatis libero ipsum pariatur.
+                kids:
+                - age: 5013341427918345482
+                  name: Perspiciatis libero ipsum pariatur.
+                - age: 5013341427918345482
+                  name: Perspiciatis libero ipsum pariatur.
+                - age: 5013341427918345482
+                  name: Perspiciatis libero ipsum pariatur.
+                mother:
+                  age: 5013341427918345482
+                  name: Perspiciatis libero ipsum pariatur.
+                size: 990580789195785088
+                surname: Aspernatur qui ducimus alias aliquam dolor.
+  /person:
+    get:
+      tags:
+      - exmp
+      summary: get-person exmp
+      operationId: exmp#get-person
+      responses:
+        "200":
+          description: OK response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+              example:
+                age: 4920317238429844597
+                name: Aut ut minus nihil ut mollitia.
+components:
+  schemas:
+    Fam:
+      type: object
+      properties:
+        father:
+          $ref: '#/components/schemas/Person'
+        kids:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+          example:
+          - age: 5013341427918345482
+            name: Perspiciatis libero ipsum pariatur.
+          - age: 5013341427918345482
+            name: Perspiciatis libero ipsum pariatur.
+          - age: 5013341427918345482
+            name: Perspiciatis libero ipsum pariatur.
+          - age: 5013341427918345482
+            name: Perspiciatis libero ipsum pariatur.
+        mother:
+          $ref: '#/components/schemas/Person'
+        size:
+          type: integer
+          example: 5015812525847597856
+          format: int64
+        surname:
+          type: string
+          example: Placeat occaecati consequatur tempora quam.
+      example:
+        father:
+          age: 5013341427918345482
+          name: Perspiciatis libero ipsum pariatur.
+        kids:
+        - age: 5013341427918345482
+          name: Perspiciatis libero ipsum pariatur.
+        - age: 5013341427918345482
+          name: Perspiciatis libero ipsum pariatur.
+        - age: 5013341427918345482
+          name: Perspiciatis libero ipsum pariatur.
+        - age: 5013341427918345482
+          name: Perspiciatis libero ipsum pariatur.
+        mother:
+          age: 5013341427918345482
+          name: Perspiciatis libero ipsum pariatur.
+        size: 4854669717786173899
+        surname: Doloribus dolorem sit eum numquam.
+    Person:
+      type: object
+      properties:
+        age:
+          type: integer
+          example: 90985222409514609
+          format: int64
+        name:
+          type: string
+          example: Omnis quas ut hic fugit ea ullam.
+      example:
+        age: 5016303001970523752
+        name: Dolor odio.
+tags:
+- name: exmp
